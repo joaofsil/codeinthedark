@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <style>
+            body {
+                background-color: #000;
+            }
+            .canvas {
+                width: 600px;
+                height: 600px;
+                position: relative;
+            }
+            .hcenter {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .head {
+                width: 150px;
+                height: 150px;
+                top: 0;
+                border-radius: 50%;
+                background-color: #F5F5F4;
+            }
+            .visor {
+                width: 130px;
+                height: 130px;
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #A1AEB8;
+            }
+            .torso {
+                width: 180px;
+                height: 230px;
+                border-bottom: 10px solid #D4D7D7;
+                top: 130px;
+                background-color: #fff;
+            }
+            .arm {
+                position: absolute;
+                top: 0;
+                width: 30px;
+                height: 240px;
+                background-color: #fff;
+            }
+            .arm-left {
+                left: 0;
+                transform: rotate(45deg);
+                transform-origin: top left;
+            }
+            .arm-right {
+                right: 0;
+                transform: rotate(-60deg);
+                transform-origin: top right;
+            }
+            .legs {
+                top: 330px;
+                width: 180px;
+                height: 200px;
+            }
+            .leg {
+                width: 30px;
+                height: 200px;
+                background-color: #fff;
+                position: absolute;
+                top: 0;
+            }
+            .leg-left {
+                right: 0;
+            }
+            .leg-right {
+                left: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="canvas">
+            
+            <div class="head hcenter">
+                <div class="visor"></div>
+            </div>
+            <div class="torso hcenter">
+                <div class="arm arm-left">
+                    <div class="elbow"></div>
+                    <div class="wrist"></div>
+                </div>
+                <div class="arm arm-right">
+                    <div class="elbow"></div>
+                    <div class="wrist"></div>
+                    <div class="pole">
+                        <div class="flag"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="legs hcenter">
+                <div class="leg leg-left">
+                    <div class="knee"></div>
+                    <div class="foot"></div>
+                </div>
+                <div class="leg leg-right">
+                    <div class="knee"></div>
+                    <div class="foot"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

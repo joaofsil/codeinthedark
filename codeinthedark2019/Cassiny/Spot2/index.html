@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+/* 
+background: #1E2229
+
+saturn: #BEA483
+saturn rings: #FFE3C0
+
+cassini head: #DCE1EB
+cassini body: #414952
+cassini pannels: #E9EDF5
+cassini antennas: #FFFFFF
+*/
+
+            
+
+            body {
+                background-color: #1e2229;
+                margin: 0;
+            }
+            
+            .planet-rings {
+                position: absolute;
+                top: 300px;
+                left: 100px;
+                width: 200px;
+                height: 200px;
+                border-radius 75%;
+                background-color: #ffe3c0;
+            }
+            .planet {
+                position: absolute;
+                top: 300px;
+                left: 100px;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-color: #bea483;
+            }
+            
+            .cassini-wrapper {
+                position: absolute;
+                top: 100px;
+                left: 500px;
+            }
+            
+            .cassini {
+                position: absolute;
+                top: 20px;
+                left: 0px;
+                width: 100px;
+                height: 50px;
+                background-color: #414952;
+                animation: trip 3s infinite;
+            }
+            
+            @keyframes trip {
+                0% { transform: translate3d(0, 0, 0); }
+                100% { transform: translate3d(-500px, 500px, 0); }
+            }
+            
+            .cassini-arm {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                left: 50px;
+                height: 50px;
+                background-color: #e9edf5;
+            }
+            
+            .cassini-arm2 {
+                position: absolute;
+                top: 100px;
+                left: 0;
+                width: 50px;
+                height: 50px;
+                background-color: #e9edf5;
+            }
+            
+            .cassini-leg1 {
+                position: absolute;
+                left: 0;
+                top: 75px;
+                width: 200px;
+                height: 2px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="planet-rings"></div>
+        <div class="planet"></div>
+        <div class="cassini-wrapper">
+            <div class="cassini-arm"></div>
+            <div class="cassini-arm2"></div>
+            <div class="cassini"></div>
+            <div class="cassini-leg1"></div>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+

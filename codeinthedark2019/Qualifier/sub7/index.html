@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Code in the dark</title>
+  <style>
+    * {
+      transform-origin: 50% 50%;
+    }
+
+    @keyframes backside-anim {
+      0% {
+        transform: scaleX(0);
+      }
+      25% {
+        transform: scaleX(0);
+      }
+      50% {
+        transform: scaleX(1);
+      }
+      75% {
+        transform: scaleX(0);
+      }
+      100% {
+        transform: scaleX(0);
+      }
+    }
+
+    #backside-circle {
+      animation: backside-anim 5s linear infinite;
+      transform-origin: 50px 0%;
+    }
+
+    @keyframes right-circle-anim {
+      0% {
+        transform: scaleX(1);
+      }
+      25% {
+        transform: scaleX(0);
+      }
+      50% {
+        transform: scaleX(1);
+      }
+      75% {
+        transform: scaleX(1);
+      }
+      100% {
+        transform: scaleX(1);
+      }
+    }
+
+    @keyframes left-circle-anim {
+      0% {
+        transform: scaleX(1);
+      }
+      25% {
+        transform: scaleX(1);
+      }
+      50% {
+        transform: scaleX(1);
+      }
+      75% {
+        transform: scaleX(0);
+      }
+      100% {
+        transform: scaleX(1);
+      }
+    }
+
+    @keyframes small-circle-anim {
+      0% {
+        transform: translateX(0);
+      }
+      25% {
+        transform: translateX(25px);
+      }
+      50% {
+        transform: translateX(0);
+      }
+      75% {
+        transform: translateX(-25px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    #small-circle {
+      animation: small-circle-anim 5s linear infinite;
+    }
+
+    @keyframes stick-circle-anim {
+      0% {
+        transform: scaleX(0);
+      }
+      25% {
+        transform: scaleX(1);
+      }
+      50% {
+        transform: scaleX(0);
+      }
+      75% {
+        transform: scaleX(-1);
+      }
+      100% {
+        transform: scaleX(0);
+      }
+    }
+
+    @keyframes stick-circle-mask-anim {
+      0% {
+        transform: scaleX(1);
+      }
+      25% {
+        transform: scaleX(0);
+      }
+      50% {
+        transform: scaleX(0);
+      }
+      75% {
+        transform: scaleX(0);
+      }
+      100% {
+        transform: scaleX(1);
+      }
+    }
+
+    #stick-circle {
+      animation: stick-circle-anim 5s linear infinite;
+      transform-origin: 50px 0%;
+    }
+
+    #stick-circle-mask {
+      animation: stick-circle-mask-anim 5s linear infinite;
+      transform-origin: 50px 0%;
+    }
+
+    #right-circle {
+      animation: right-circle-anim 5s linear infinite;
+      position: relative;
+      transform-origin: 50px 0%;
+    }
+
+    #left-circle {
+      animation: left-circle-anim 5s linear infinite;
+      position: relative;
+      transform-origin: 50px 0%;
+    }
+
+    body, html {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+    }
+
+    body {
+      padding-bottom: 54.25%;
+      position: relative;
+      z-index: -99999;
+    }
+
+    .main {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+
+    .full {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+
+    .sky {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+
+    .sky .background {
+      background-image: linear-gradient(rgb(40, 77, 181), #ff2f00 60%);
+      opacity: 0.7;
+    }
+
+    .distant-stars {
+      background-image: url("assets/distant-stars.svg");
+      background-repeat: repeat-x;
+      background-size: contain;
+    }
+
+    .close-stars {
+      background-image: url("assets/close-stars.svg");
+      background-repeat: repeat-x;
+      background-size: contain;
+    }
+
+    @keyframes slide-anim {
+      from {
+        background-position-x: 0px;
+      }
+      to {
+        background-position-x: -50000000px;
+      }
+    }
+
+    .front-mountains {
+      background: url("assets/front-mountains.svg") repeat-x bottom;
+      animation: slide-anim 4000000s linear infinite;
+    }
+
+    .middle-mountains {
+      background: url("assets/middle-mountains.svg") repeat-x bottom;
+      animation: slide-anim 6000000s linear infinite;
+    }
+
+    .back-mountains {
+      background: url("assets/back-mountains.svg") repeat-x bottom;
+      animation: slide-anim 8000000s linear infinite;
+    }
+
+    .clouds {
+      background: url("assets/clouds.svg") repeat-x bottom;
+      animation: slide-anim 8500000s linear infinite;
+    }
+
+    .large-planet {
+      background: url("assets/large-planet.svg") repeat-x bottom;
+      animation: slide-anim 8500000s linear -30s infinite;
+      background-size: 200%;
+    }
+
+    .small-planet {
+      background: url("assets/small-planet.svg") repeat-x bottom;
+      animation: slide-anim 8500000s linear infinite;
+    }
+
+    .rover {
+      position: absolute;
+      z-index: 20;
+      bottom: 10%;
+    }
+
+    .grey1 {
+      fill: #b0c1c4;
+    }
+
+    .grey2 {
+      fill: #ffffff;
+    }
+
+    .grey3 {
+      fill: #3a445a;
+    }
+
+    .grey4 {
+      fill: #d0d3d0;
+    }
+
+    .rover {
+      position: absolute;
+      z-index: 999999;
+      width: 21%;
+      bottom: 10%;
+      left: 38%;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotateZ(0deg);
+      }
+      to {
+        transform: rotateZ(360deg);
+      }
+    }
+
+    @keyframes bump {
+      0% {
+        transform: translateY(0);
+      }
+      65% {
+        transform: translateY(0);
+      }
+      70% {
+        transform: translateY(-5px);
+      }
+      75% {
+        transform: translateY(0px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .tire1 {
+      animation: bump 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.6s infinite;
+      transform-origin: 79px 189px;
+    }
+
+    .tire1 .tire {
+      transform-origin: 79px 189px;
+    }
+
+    .tire2 {
+      animation: bump 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.8s infinite;
+      transform-origin: 150px 189px;
+    }
+
+    .tire2 .tire {
+      transform-origin: 150px 189px;
+    }
+
+    .tire3 {
+      animation: bump 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+      transform-origin: 220px 189px;
+    }
+
+    .tire3 .tire {
+      transform-origin: 220px 189px;
+    }
+
+    .tire {
+      animation: spin 14s linear infinite;
+    }
+
+    @keyframes arm-swing-anim {
+      0% {
+        transform: rotateZ(0deg);
+      }
+      30% {
+        transform: rotateZ(0deg);
+      }
+      50% {
+        transform: rotateZ(20deg);
+      }
+      65% {
+        transform: rotateZ(-5deg);
+      }
+      70% {
+        transform: rotateZ(5deg);
+      }
+      80% {
+        transform: rotateZ(0deg);
+      }
+      100% {
+        transform: rotateZ(0deg);
+      }
+    }
+
+    .rover-arm {
+      animation: arm-swing-anim 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.3s infinite;
+      transform-origin: 56px 39px;
+    }
+
+    @keyframes rover-bounce {
+      0% {
+        transform: rotateZ(-2deg);
+      }
+      30% {
+        transform: rotateZ(2deg);
+      }
+      50% {
+        transform: rotateZ(-2deg);
+      }
+      70% {
+        transform: rotateZ(2deg);
+      }
+      100% {
+        transform: rotateZ(-2deg);
+      }
+    }
+
+    .rover svg {
+      animation: rover-bounce 5s linear infinite;
+      transform-origin: 110px 140px;
+    }
+
+  </style>
+</head>
+<body>
+<div class="main">
+  <div class="sky full">
+    <div class="close-stars full"></div>
+    <div class="distant-stars full"></div>
+    <div class="large-planet full"></div>
+    <div class="small-planet full"></div>
+    <div class="background full"></div>
+  </div>
+  <div class="back-mountains full"></div>
+  <div class="middle-mountains full"></div>
+  <div class="front-mountains full"></div>
+  <div class="clouds full"></div>
+
+  <div class="rover">
+    <svg x="0px" y="0px" viewBox="0 0 285.7 239.5" xml:space="preserve">
+      <g class="rover-arm">
+        <rect x="53.1" y="38.6" class="grey1" width="6.2" height="39.5"/>
+        <image style="overflow:visible;" width="28" height="17" xlink:href="assets/rover-claw.svg"
+               transform="matrix(1 0 0 1 42.9691 76.8173)"></image>
+      </g>
+      <rect x="107.9" y="87.3" class="grey1" width="7.7" height="25.6"/>
+      <polygon class="grey1" points="58.8,44.1 105.1,79.3 110.3,74 63.3,38.6 "/>
+      <polygon class="grey1"
+               points="69.5,111.4 233.7,114.6 259.5,153.2 248.9,191.9 54.7,191.9 42.4,151.4 "/>
+      <polygon class="grey2" points="69.5,111.4 233.7,114.5 247.4,134.9 56,131.3 "/>
+      <rect x="148.4" y="48.9" class="grey1" width="8.2" height="64.1"/>
+      <rect x="205.3" y="105.3" class="grey1" width="6.2" height="8.7"/>
+      <circle class="grey3" cx="112.5" cy="81.2" r="10.3"/>
+      <circle class="grey3" cx="55.9" cy="38.9" r="8.5"/>
+      <rect x="120" y="135" class="grey4" width="13.1" height="13.1"/>
+      <rect x="145" y="135" class="grey4" width="13.1" height="13.1"/>
+      <rect x="170" y="135" class="grey4" width="13.1" height="13.1"/>
+      <image style="overflow:visible;" width="62" height="34" xlink:href="assets/rover-camera.svg"
+             transform="matrix(1 0 0 1 121.8806 17.3694)"></image>
+      <g class="tire1">
+        <g class="tire">
+          <image style="overflow:visible;" width="62" height="62"
+                 xlink:href="assets/rover-wheel.svg"
+                 transform="matrix(1 0 0 1 47.9226 157.8778)"></image>
+          <circle class="grey1" cx="78.9" cy="189.2" r="9.7"/>
+        </g>
+      </g>
+      <g class="tire2">
+        <g class="tire">
+          <image style="overflow:visible;" width="62" height="62"
+                 xlink:href="assets/rover-wheel.svg"
+                 transform="matrix(1 0 0 1 119.8806 157.8778)"></image>
+          <circle class="grey1" cx="149.7" cy="188.9" r="9.7"/>
+        </g>
+      </g>
+      <g class="tire3">
+        <g class="tire">
+          <image style="overflow:visible;" width="62" height="62"
+                 xlink:href="assets/rover-wheel.svg"
+                 transform="matrix(1 0 0 1 189.4856 157.8778)"></image>
+          <circle class="grey1" cx="220.7" cy="188.9" r="9.7"/>
+        </g>
+      </g>
+
+      <defs>
+        <mask id="stick-mask">
+          <rect width="200" height="200" fill="white"/>
+          <circle id="stick-circle-mask" cx="50" cy="50" r="50" fill="black"/>
+        </mask>
+        <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+          <stop offset="0%" style="stop-color:rgb(142,152,155);stop-opacity:1"/>
+          <stop offset="30%" style="stop-color:#eeeeee;stop-opacity:1"/>
+          <stop offset="100%" style="stop-color:#b8b8b8;stop-opacity:1"/>
+        </radialGradient>
+      </defs>
+
+      <g transform="matrix(0.6 0 0 0.6 121 -2)">
+        <path id="right-circle" d="M 50,0 a 1,1 0 0,1 0,100" fill="#3d445a"/>
+        <path id="left-circle" d="M 50,100 a 1,1 0 0,1 0,-100" fill="#3d445a"/>
+        <circle id="backside-circle" cx="50" cy="50" r="50" style="fill: url(#grad1)"/>
+        <g mask="url(#stick-mask)">
+          <rect id="stick-circle" x="50" y="45" width="25" height="10" style="fill: #b3c3c7"/>
+        </g>
+        <circle id="small-circle" cx="50" cy="50" r="10" style="fill: #3d445a"/>
+      </g>
+    </svg>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,149 @@
+:root {
+  --cassiniSize: 180px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #1E2229;
+}
+
+.space {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+/*--SATURN--*/
+.saturn {
+  display: block;
+  position: absolute;
+  bottom: 70px;
+  left: 200px;
+  width: 380px;
+  height: 380px;
+  background-color: #BEA483;
+  border-radius: 100%;  
+}
+.saturn:before,
+.saturn:after {
+  content: '';
+  width: 490px;
+  height: 470px;
+  border-radius: 50%;
+  border: 110px solid #FFE3C0;
+  position: absolute;
+  top: -150px;
+  left: -160px;
+  transform: rotateX(70deg) rotateY(140deg);
+}
+.saturn:before {
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+.saturn:after {
+  z-index: -1;
+}
+
+/*--CASSINI--*/
+.cassini {
+  width: 200px;
+  transform-origin: center;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  animation-name: cassiniMove;
+  animation-duration: 4s;
+}
+
+/*--CASSINI--BODY--*/
+.cassini-body {
+  width: var(--cassiniSize);
+  height: 80px;
+  background-color: #414952;
+}
+
+/*--CASSINI--HEAD--*/
+.cassini-head {
+  --size: 46px;
+  
+  position: absolute;
+  width: var(--size);
+  height: calc(var(--size)*2);
+  background-color: #DCE1EB;
+  border-bottom-left-radius: calc(var(--size)*2);
+  border-top-left-radius: calc(var(--size)*2);
+  transform: translate(var(--cassiniSize), -86px);
+}
+.cassini-head:before {
+  content: '';
+  display: block;
+  position: relative;
+  width: 25px;
+  height: 12px;
+  background-color: #FFFFFF;
+  border-radius: 0px 20px 20px 0;
+  transform: translate(var(--size), 40px);
+}
+
+/*--CASSINI--HAND--*/
+.cassini-hand {
+  --size: 66px;
+
+  position: absolute;
+  width: var(--size);
+  height: 45px;
+  background-color: #E9EDF5;
+  transform-origin: right center;
+  transform: translate(85px, -10px) rotate(-90deg);
+}
+.cassini-hand:before {
+  content: '';
+  display: block;
+  position: relative;
+  width: 12px;
+  height: 20px;
+  background-color: #FFFFFF;
+  transform: translate(var(--size), 13px);
+}
+.cassini-hand--top {
+  transform: translate(85px, -115px) rotate(90deg);
+}
+
+/*--CASSINI--ARM--*/
+.cassini-arm {
+  width: 290px;
+  height: 3px;
+  background-color: #FFFFFF;
+  position: absolute;
+  transform: translate(-110px, -42px);
+}
+.cassini-arm:before,
+.cassini-arm:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  transform: rotate(15deg);
+  transform-origin: 100%;
+}
+
+.cassini-arm:after {
+  transform: translate(0, -3px) rotate(-15deg);
+}
+
+@keyframes  cassiniMove {
+  from {
+    transform: translate(832px, 90px) scale(1) rotate(130deg);
+  }
+  to {
+    transform: translate(304px, 71vh) scale(0.0) rotate(170deg);
+  }
+}

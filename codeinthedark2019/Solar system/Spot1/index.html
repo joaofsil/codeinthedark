@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <style>
+            *, body{
+                margin: 0;
+                padding: 0;
+                background-color: #0f1217;
+                width: 100vw;
+                height: 100vh;
+                position: relative;
+            }
+            .planet-line{
+                width: 90vh;
+                height: 90vh;
+                position: absolute;
+                top: 10vh;
+                left: 20vh;
+                border: solid 1px #224D82;
+                border-radius: 50%;
+            }
+            
+            .pl1{
+                width: 80vh;
+                height: 80vh;
+                top: 15vh;
+                left: 15vh;
+            }
+            
+            .pl2{
+                width: 70vh;
+                height: 70vh;
+                top: 20vh;
+                left: 20vh;
+            }
+            
+            .pl3{
+                width: 60vh;
+                height: 60vh;
+                top: 30vh;
+                left: 30vh;
+            }
+            
+            .pl4{
+                width: 50vh;
+                height: 50vh;
+                top: 35vh;
+                left: 35vh;
+            }
+            
+            .sun{
+                position: absolute;
+                background-color: #FFD300;
+                border-radius: 50%;
+                width: 20vh;
+                height: 20vh;
+                top: 50vh;
+                left: 50vw;
+            }
+            
+            .planet1{
+                position: absolute;
+                background-color: #E0EBED;
+                width: 2vh;
+                height: 2vh;
+                left: 50vw;
+                top: 50vw;
+                animation: rotation1 3s ease;
+            }
+            
+            @keyframes rotation1{
+                from{
+                    transform: translate(50vh, 50vw) rotate(360deg);
+                }
+                to{
+                    
+                }
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="planet-line"></div>
+        <div class="planet-line pl1"></div>
+        <div class="planet-line pl2"></div>
+        <div class="planet-line pl3"></div>
+        <div class="planet-line pl4"></div>
+        <div class="planet-line pl5"></div>
+        <div class="planet1"></div>
+        <div class="planet2"></div>
+        <div class="planet3"></div>
+        <div class="planet4"></div>
+        <div class="sun"></div>
+    </body>
+</html>

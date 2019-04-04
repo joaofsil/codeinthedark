@@ -1,0 +1,333 @@
+.wrapper {
+  width: 960px;
+  height: 540px;
+  position: relative;
+  background: linear-gradient(to bottom, #192153, #CF4E28 70%);
+}
+
+.distant-stars,
+.near-stars,
+.large-planet,
+.small-planet,
+.back-mountains,
+.clouds,
+.middle-mountains,
+.front-mountains {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+.distant-stars,
+.near-stars {
+  background-repeat: repeat;
+  background-size: 100% 100%;
+}
+
+.back-mountains,
+.middle-mountains,
+.front-mountains,
+.clouds,
+.large-planet,
+.small-planet {
+  background-repeat: repeat-x;
+}
+
+.back-mountains,
+.middle-mountains,
+.front-mountains,
+.clouds {
+  background-position-y: bottom;
+}
+
+.distant-stars {
+  background-image: url('assets/distant-stars.svg');
+}
+
+.near-stars {
+  background-image: url('assets/close-stars.svg');
+}
+
+.large-planet {
+  background-size: 200% 100%;
+  background-position: -150 -10;
+  background-repeat: no-repeat;
+
+  background-image: url('assets/large-planet.svg');
+  filter: contrast(50%);
+}
+
+.small-planet {
+  background-position: -50 00;
+  background-repeat: no-repeat;
+
+  background-image: url('assets/small-planet.svg');
+  filter: contrast(50%);
+
+}
+
+.back-mountains {
+  background-image: url('assets/back-mountains.svg');
+}
+
+.clouds {
+  background-image: url('assets/clouds.svg');
+}
+
+.middle-mountains {
+  background-image: url('assets/middle-mountains.svg');
+  background-repeat: repeat-x;
+}
+
+.front-mountains {
+  background-image: url('assets/front-mountains.svg');
+  background-size: 100%;
+}
+
+.rover {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 30px;
+}
+
+.rover-body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #9eb1b5;
+
+  clip-path: polygon(15% 0%, 85% 0, 100% 50%, 95% 100%, 5% 100%, 0 50%);
+}
+
+.rover-topbody {
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  top: 0;
+  left: 0;
+  background-color: #eee;
+}
+
+.rover-dots {
+  width: 100%;
+  top: 30%;
+  text-align: center;
+}
+
+.rover-dot {
+  width: 5px;
+  height: 5px;
+  margin-right: 3px;
+  display: inline-block;
+  background-color: #ddd;
+}
+
+.rover-wheels {
+  position: relative;
+  top: 55%;
+  width: 100%;
+  left: 50%;
+  transform: translatex(-50%);
+}
+
+.rover-axis {
+  position: absolute;
+}
+
+.rover-wheel {
+  background-image: url('assets/rover-wheel.svg');
+  background-size: contain;
+  width: 23px;
+  height: 23px;
+}
+
+
+.rover-axis:nth-child(1) {
+  left: 0px;
+}
+
+.rover-axis:nth-child(2) {
+  left: 28px;
+}
+
+.rover-axis:nth-child(3) {
+  left: 56px;
+}
+
+.rover-wheel-middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translatex(-50%) translatey(-50%);
+  border-radius: 50%;
+  background-color: #9eb1b5;
+  width: 8px;
+  height: 8px;
+}
+
+.camera {
+  position: relative;
+  top: 0;
+  left: 50%;
+}
+
+.camera-arm {
+  height: 40px;
+  width: 4px;
+  transform: translateY(-40px);
+  background-color: #9eb1b5;
+}
+
+.camera-camera {
+  position: absolute;
+  top: -40px;
+  left: -11px;
+  background-image: url('assets/rover-camera.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 26px;
+  height: 20px;
+}
+
+.arm {
+  position: relative;
+  top: -40px;
+  left: 25%;
+}
+
+.arm-1,
+.arm-2,
+.arm-3 {
+  height: 20px;
+  width: 3px;
+  background-color: #a9bac0;
+  position: relative;
+}
+
+.arm-2 {
+  height: 25px;
+}
+
+.arm-1:after,
+.arm-2:after {
+  content: '';
+  display: block;
+  background: #30264f;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  border-radius: 50%;
+  bottom: -1px;
+  left: -2px;
+}
+
+.arm-1 {
+  transform-origin: top center;
+  transform: rotateZ(180deg);
+}
+
+.arm-2 {
+  transform-origin: top center;
+  transform: translateY(20px) translateX(2px) rotateZ(-60deg);
+}
+
+.arm-3 {
+  transform-origin: top center;
+}
+
+.arm-3:after {
+  content: '';
+  display: block;
+  background-image: url('assets/rover-claw.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  border-radius: 50%;
+  bottom: -10px;
+  left: -4px;
+}
+
+.antena {
+  position: absolute;
+  top: -5px;
+  right: 15%;
+}
+
+.antena-support {
+  position: absolute;
+  right: 25%;
+  height: 5px;
+  width: 3px;
+  background-color: #a9bac0;
+}
+
+.antena-sphere {
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: center;
+  width: 20px;
+  height: 20px;
+}
+
+.antena-half-sphere {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  height: 20px;
+  width: 10px;
+  background: #30264f;
+  transform: rotateY(-90deg) translateX(-5px) translateZ(-5px);
+}
+
+.antena-back-surface {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  height: 20px;
+  width: 20px;
+  background: #30264f;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+
+.antena-surface {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  height: 20px;
+  width: 20px;
+  background: radial-gradient(grey, white);
+  backface-visibility: hidden;
+}
+
+.antena-arm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 2px;
+  background-color: #a9bac0;
+  transform: rotateY(-90deg) translateX(6px) translateY(9px) translateZ(-5px);
+}
+
+.antena-arm-tip {
+  background: #30264f;
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  border-radius: 50%;
+  bottom: -2px;
+  right: -2px;
+}

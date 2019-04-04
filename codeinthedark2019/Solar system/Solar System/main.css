@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #0f1217;
+}
+
+.solarsystem {
+  position: relative;
+  width: 800px;
+  height: 800px;
+  margin: 0 auto;
+  list-style: none;
+  transition: all 0.09s ease-in; 
+  overflow: hidden;
+}
+
+/*--PLANETS--*/
+.solarsystem li {
+  --size: 200px; 
+  --sizeDiff: 60px; 
+  --positionDiff: 30px; 
+  --sizeF: calc(var(--size) + (var(--sizeDiff)*var(--itemNum))); 
+  --positionF: calc(var(--positionDiff) + (var(--positionDiff)*var(--positionNum))); 
+
+  display: block;
+  position: absolute;
+  border: 2px solid #224D82;
+  z-index: 1;
+
+  animation-iteration-count:infinite;
+  animation-timing-function:linear;
+  animation-name:orbit;
+  animation-duration: var(--animationDuration);
+
+  width: var(--sizeF);
+  height: var(--sizeF);
+  border-radius: calc(var(--sizeF) / 2);
+  top: calc(var(--positionF));
+  left: calc(var(--positionF));
+}
+
+ul.solarsystem li > span {
+  display: block;
+  position: absolute;
+  top: calc(0px - (var(--planetSize)/2));
+  left: calc(50% - (var(--planetSize)/2));
+  width: var(--planetSize);
+  height: var(--planetSize);
+  background-color: var(--planetColor);
+  border-radius: 100%;
+}
+
+/*--RING--*/
+ul.solarsystem li .ring:before,
+ul.solarsystem li .ring:after {
+  content: '';
+  width: 30px;
+  height: 12px;
+  border-radius: 50%;
+  border: 8px solid #FAA83E;
+  position: absolute;
+  top: -2px;
+  left: -11px;
+  transform: rotateX(65deg) rotateY(170deg);
+}
+ul.solarsystem li .ring:before {
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+ul.solarsystem li .ring:after {
+  z-index: -1;
+}
+
+/*--SUN--*/
+ul.solarsystem .sun {
+  border: none;
+}
+
+ul.solarsystem .sun span {
+  top: calc(50% - (var(--planetSize)/2));
+  left: calc(50% - (var(--planetSize)/2));
+}
+
+@keyframes orbit { 
+  from { 
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}

@@ -1,0 +1,562 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Curiosity</title>
+        <style>
+            html, body {
+                margin: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .stage {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                background-image: linear-gradient(#340068 10%, #A63B00 50%);
+                overflow: hidden;
+            }
+
+            .distant-stars {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 200%;
+                height: 100%;
+                background-image: url('assets/distant-stars.svg');
+                animation-name: move-left;
+                animation-duration: 500s;
+                animation-timing-function: linear;
+            }
+
+            .close-stars {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 200%;
+                height: 100%;
+                background-image: url('assets/close-stars.svg');
+                animation-name: move-left;
+                animation-duration: 400s;
+                animation-timing-function: linear;
+            }
+
+            .large-planet {
+                position: absolute;
+                top: 0;
+                left: -20%;
+                width: 100%;
+                height: 100%;
+                background-image: url('assets/large-planet.svg');
+                background-size: cover;
+                animation-name: move-left;
+                animation-duration: 300s;
+                animation-timing-function: linear;
+            }
+
+            .small-planet {
+                position: absolute;
+                top: 0;
+                right: 5%;
+                width: 100%;
+                height: 100%;
+                background-image: url('assets/small-planet.svg');
+                background-size: cover;
+                background-position: right center;
+                animation-name: move-left;
+                animation-duration: 300s;
+                animation-timing-function: linear;
+            }
+
+            .smoke-screen {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: linear-gradient(#340068 10%, #A63B00 50%);
+                opacity: 0.7;
+            }
+
+            .clouds {
+                position: absolute;
+                top: 40%;
+                left: -15%;
+                width: 200%;
+                height: 75%;
+                background-image: url('assets/clouds.svg');
+                background-size: contain;
+                animation-name: move-left;
+                animation-duration: 250s;
+                animation-timing-function: linear;
+            }
+
+
+            .mountains {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+
+            .back-mountains {
+                width: 200%;
+                height: 45%;
+                background-image: url('assets/back-mountains.svg');
+                animation-name: move-left;
+                animation-duration: 200s;
+                animation-timing-function: linear;
+            }
+
+            .middle-mountains {
+                width: 200%;
+                height: 42%;
+                background-image: url('assets/middle-mountains.svg');
+                animation-name: move-left;
+                animation-duration: 150s;
+                animation-timing-function: linear;
+            }
+
+            .front-mountains {
+                width: 400%;
+                height: 38%;
+                background-image: url('assets/front-mountains.svg');
+                animation-name: move-left;
+                animation-duration: 80s;
+                animation-timing-function: linear;
+            }
+
+            @keyframes move-left {
+                0% {transform: translateX(0);}
+                100% {transform: translateX(-2000px);}
+            }
+
+            .rover {
+                position: absolute;
+                left: 50%;
+                bottom: 50px;
+                height: 200px;
+                animation-name: rover-wobble;
+                animation-duration: 3s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                transform-origin: 50% 100%;
+            }
+
+            @keyframes rover-wobble {
+                0% { transform: rotateZ(0deg); }
+                10% { transform: rotateZ(0deg); }
+                20% { transform: rotateZ(-2deg); }
+                40% { transform: rotateZ(2deg); }
+                60% {transform: rotateZ(-2deg); }
+                70% { transform: rotateZ(0deg); }
+                100% { transform: rotateZ(0deg); }
+            }
+
+            .rover .head {
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin-left: -30px;
+                width: 60px;
+                height: 35px;
+                background-image: url('assets/rover-camera.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                z-index: 1;
+            }
+
+            .rover .neck {
+                position: absolute;
+                top: 30px;
+                left: 0;
+                margin-left: -4px;
+                width: 8px;
+                height: 60px;
+                background-color: #b1c2c5;
+            }
+
+            .rover .body1 {
+                position: absolute;
+                top: 90px;
+                left: 0;
+                margin-left: -90px;
+                border-bottom: 20px solid #ebeff1;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                width: 160px;
+                height: 0;
+            }
+
+            .rover .body2 {
+                position: absolute;
+                top: 110px;
+                left: 0;
+                margin-left: -100px;
+                border-bottom: 20px solid #b1c2c5;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                width: 180px;
+                height: 0;
+            }
+
+            .rover .body3 {
+                position: absolute;
+                top: 130px;
+                left: 0;
+                margin-left: -100px;
+                width: 180px;
+                height: 10px;
+                border-top: 30px solid #b1c2c5;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+            }
+
+            .rover .square {
+                position: absolute;
+                top: 112px;
+                width: 14px;
+                height: 14px;
+                background-color: #cfd4d0;
+            }
+
+            .rover .square1 {
+                left: -35px;
+            }
+
+            .rover .square2 {
+                left: -7px;
+            }
+
+            .rover .square3 {
+                left: 21px;
+            }
+
+            .rover .arm {
+                position: absolute;
+                width: 8px;
+                background-color: #b1c2c5;
+            }
+
+            .rover .arm1 {
+                top: 70px;
+                left: -48px;
+                height: 20px;
+            }
+
+            .rover .arm2 {
+                top: 10px;
+                left: -68px;
+                height: 70px;
+                transform: rotateZ(-45deg);
+            }
+
+            .rover .forearm {
+                position: absolute;
+                top: 24px;
+                left: -92px;
+                animation-name: arm-wobble;
+                animation-duration: 3s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+            }
+
+            @keyframes arm-wobble {
+                0% { transform: rotateZ(0deg); }
+                10% { transform: rotateZ(0deg); }
+                20% { transform: rotateZ(15deg); }
+                40% { transform: rotateZ(-15deg); }
+                60% {transform: rotateZ(15deg); }
+                70% { transform: rotateZ(0deg); }
+                100% { transform: rotateZ(0deg); }
+            }
+
+            .rover .arm3 {
+                top: 0px;
+                left: 0px;
+                height: 40px;
+            }
+
+            .rover .claw {
+                position: absolute;
+                top: 38px;
+                left: -7px;
+                width: 35px;
+                height: 15px;
+                background-image: url('assets/rover-claw.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            .rover .shoulder, .rover .elbow {
+                position: absolute;
+                border-radius: 50%;
+                background-color: #403e5b;
+            }
+
+            .rover .shoulder {
+                top: 55px;
+                left: -55px;
+                width: 20px;
+                height: 20px;
+            }
+
+            .rover .elbow {
+                top: 15px;
+                left: -95px;
+                width: 15px;
+                height: 15px;
+            }
+
+
+            .rover .antenna-arm {
+                position: absolute;
+                top: 80px;
+                left: 50px;
+                width: 6px;
+                height: 10px;
+                background-color: #b1c2c5;
+            }
+
+            .rover .antenna-back-left-wrapper,
+            .rover .antenna-back-right-wrapper {
+                position: absolute;
+                top: 30px;
+                width: 25px;
+                height: 50px;
+                overflow: hidden;
+                animation: antenna-back-hide 5s linear infinite;
+            }
+
+            .rover .antenna-back-left-wrapper {
+                left: 28px;
+            }
+
+            @keyframes antenna-back-hide {
+                0% { visibility: hidden; }
+                50% { visibility: hidden; }
+                51% { visibility: visible; }
+                100% { visibility: visible; }
+            }
+
+            .rover .antenna-back-left,
+            .rover .antenna-back-right {
+                width: 50px;
+                height: 50px;
+                background-color: #403e5b;
+                border-radius: 50%;
+            }
+
+            .rover .antenna-back-right-wrapper {
+                left: 53px;
+                animation-delay: 2.5s;
+            }
+
+            .rover .antenna-back-right {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+
+            @keyframes antenna-back-hide {
+                0% { visibility: hidden; }
+                50% { visibility: hidden; }
+                51% { visibility: visible; }
+                100% { visibility: visible; }
+            }
+
+            .rover .antenna-back-left {
+                width: 50px;
+                height: 50px;
+                background-color: #403e5b;
+                border-radius: 50%;
+            }
+
+            .rover .antenna {
+                position: absolute;
+                top: 30px;
+                left: 28px;
+                animation: antenna-rotation 5s linear infinite;
+                transform-style: preserve-3d;
+            }
+
+            @keyframes antenna-rotation {
+                0% { transform: rotateY(0deg); }
+                100% { transform: rotateY(-360deg); }
+            }
+
+            .rover .antenna .antenna-backplate {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50px;
+                height: 50px;
+                background-color: #403e5b;
+                border-radius: 50%;
+            }
+
+            .rover .antenna .antenna-plate {
+                position: relative;
+                width: 50px;
+                height: 50px;
+                background: radial-gradient(#929292, #ededed 25%, #929292 100%);
+                border-radius: 50%;
+                backface-visibility: hidden;
+            }
+
+            .rover .antenna .antenna-stick {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -3px;
+                width: 13px;
+                height: 6px;
+                background-color: #b1c2c5;
+                transform: rotateY(-90deg);
+                transform-origin: 0 0;
+            }
+
+            .rover .antenna .antenna-tip {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -7px;
+                margin-left: -7px;
+                width: 14px;
+                height: 14px;
+                background-color: #403e5b;
+                border-radius: 50%;
+                transform: translateZ(20px);
+                animation: antenna-tip-counter-rotation 5s linear infinite;
+            }
+
+            @keyframes antenna-tip-counter-rotation {
+                0% { transform: translateZ(20px) rotateY(0deg); }
+                100% { transform: translateZ(20px) rotateY(360deg); }
+            }
+
+            .rover .wheel-wrapper {
+                animation: wheel-jump 3s linear infinite;
+            }
+
+            .rover .wheel-wrapper2 {
+                animation-delay: 0.1s;
+            }
+
+            .rover .wheel-wrapper3 {
+                animation-delay: 0.2s
+            }
+
+            .rover .wheel {
+                position: absolute;
+                top: 130px;
+                width: 60px;
+                height: 60px;
+                background-image: url('assets/rover-wheel.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                animation-name: rotating;
+                animation-duration: 5s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+            }
+
+            .rover .wheel::before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -10px;
+                margin-left: -10px;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                background-color: #b1c2c5;
+            }
+
+            .rover .wheel1 {
+                left: -100px;
+            }
+
+            .rover .wheel2 {
+                left: -30px;
+            }
+
+            .rover .wheel3 {
+                left: 40px;
+            }
+
+            @keyframes rotating {
+                0% { transform: rotateZ(0deg); }
+                100% { transform: rotateZ(360deg); }
+            }
+
+            @keyframes wheel-jump {
+                0% { transform: translateY(0px); }        /* 0x */
+                7.5% { transform: translateY(-7px); }     /* 1x */
+                15% { transform: translateY(0px); }       /* 2x */
+                18.75% { transform: translateY(-4px); }   /* 2.5x */
+                22.5% { transform: translateY(0px); }     /* 3x */
+                30% { transform: translateY(0px); }       /* small stop */
+                37.5% { transform: translateY(-7px); }    /* 1x */
+                45% { transform: translateY(0px); }       /* 2x */
+                100% { transform: translateY(0px); }      /* big stop */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="stage">
+            <div class="distant-stars"></div>
+            <div class="close-stars"></div>
+            <div class="large-planet"></div>
+            <div class="small-planet"></div>
+            <div class="smoke-screen"></div>
+            <div class="clouds"></div>
+            <div class="mountains back-mountains"></div>
+            <div class="mountains middle-mountains"></div>
+            <div class="mountains front-mountains"></div>
+
+            <div class="rover">
+                <div class="head"></div>
+                <div class="neck"></div>
+                <div class="body1"></div>
+                <div class="body2"></div>
+                <div class="body3"></div>
+                <div class="square square1"></div>
+                <div class="square square2"></div>
+                <div class="square square3"></div>
+                <div class="arm arm1"></div>
+                <div class="arm arm2"></div>
+                <div class="forearm">
+                    <div class="arm arm3"></div>
+                    <div class="claw"></div>
+                </div>
+                <div class="shoulder"></div>
+                <div class="elbow"></div>
+                <div class="antenna-arm"></div>
+                <div class="antenna-back-left-wrapper">
+                    <div class="antenna-back-left"></div>
+                </div>
+                <div class="antenna-back-right-wrapper">
+                    <div class="antenna-back-right"></div>
+                </div>
+                <div class="antenna">
+                    <div class="antenna-backplate"></div>
+                    <div class="antenna-plate"></div>
+                    <div class="antenna-stick"></div>
+                    <div class="antenna-tip"></div>
+                </div>
+                <div class="wheel-wrapper wheel-wrapper1">
+                    <div class="wheel wheel1"></div>
+                </div>
+                <div class="wheel-wrapper wheel-wrapper2">
+                    <div class="wheel wheel2"></div>
+                </div>
+                <div class="wheel-wrapper wheel-wrapper3">
+                    <div class="wheel wheel3"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,643 @@
+body {
+  background-image: linear-gradient(to bottom, #1f2d62, #f63e00 65%);
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.distant-stars {
+  position: absolute;
+  width: 100vw;
+  height: 40vh;
+  background-image: url("assets/distant-stars.svg");
+  background-size: cover;
+  background-repeat: repeat-x;
+  animation: distantStars 35s linear infinite;
+}
+
+.close-stars {
+  position: absolute;
+  width: 100vw;
+  height: 40vh;
+  background-image: url("assets/close-stars.svg");
+  background-size: cover;
+  background-repeat: repeat-x;
+  animation: speed1x 35s linear infinite;
+}
+
+.small-planet {
+  position: absolute;
+  right: 2vw;
+  bottom: 10vh;
+  width: 45vw;
+  height: 45vw;
+  background-image: url("assets/small-planet.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  filter: hue-rotate(-375deg) brightness(80%);
+  animation: smallPlanet 35s linear infinite;
+}
+
+.large-planet {
+  position: absolute;
+  top: -2vh;
+  left: -30vw;
+  width: 60vw;
+  height: 60vw;
+  background-image: url("assets/large-planet.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  filter: brightness(60%) contrast(70%) saturate(110%);
+  animation: largePlanet 35s linear infinite;
+}
+
+.clouds {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("assets/clouds.svg");
+  background-size: auto 20vh;
+  background-position-y: 35vh;
+  background-repeat: repeat-x;
+  animation: speed1x 35s linear infinite;
+}
+
+.back-mountains {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 20vh;
+  width: 100vw;
+  height: 30vh;
+  background-image: url("assets/back-mountains.svg");
+  background-size: cover;
+  background-repeat: repeat-x;
+  animation: backMountains 35s linear infinite;
+}
+
+.middle-mountains {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 25vh;
+  width: 100vw;
+  height: 20vh;
+  background-image: url("assets/middle-mountains.svg");
+  background-size: cover;
+  background-repeat: repeat-x;
+  animation: middleMountains 35s linear infinite;
+}
+
+.front-mountains {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 40vh;
+  background-image: url("assets/front-mountains.svg");
+  background-size: cover;
+  background-repeat: repeat-x;
+  animation: frontMountains 45s linear infinite;
+}
+
+.rover {
+  position: absolute;
+  bottom: 16vh;
+  left: calc(50% - 8vw);
+  animation: rover 4s ease-in-out infinite;
+}
+
+.rover-claw-arm {
+  position: absolute;
+  top: 0;
+  background-color: #b3c3c6;
+  margin: 2vw 0 0 4.5vw;
+  bottom: 0;
+  width: 0.5vw;
+  height: 3vw;
+}
+
+.rover-claw-arm:before {
+  position: absolute;
+  background-color: #b3c3c6;
+  content: "";
+  top: -6vw;
+  width: 0.5vw;
+  height: 6vw;
+  transform: rotate(-50deg);
+  transform-origin: bottom right;
+}
+
+.rover-claw-arm:after {
+  position: absolute;
+  margin: -0.8vw 0 0 -0.5vw;
+  background-color: #3a425a;
+  content: "";
+  border-radius: 50%;
+  width: 1.5vw;
+  height: 1.5vw;
+}
+
+.rover-claw {
+  position: absolute;
+  top: -1.5vw;
+  left: 0.1vw;
+  background-color: #b3c3c6;
+  width: 0.5vw;
+  height: 3.8vw;
+  animation: claw 4s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.rover-claw:before {
+  position: absolute;
+  margin: -0.3vw 0 0 -0.2vw;
+  background-color: #3a425a;
+  content: "";
+  border-radius: 50%;
+  width: 1vw;
+  height: 1vw;
+}
+
+.rover-claw:after {
+  position: absolute;
+  margin: 3.5vw 0 0 calc(-150% + calc(0.35vw / 2));
+  background-image: url("assets/rover-claw.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+  width: 300%;
+  height: 0;
+  padding-top: 300%;
+}
+
+.rover-camera {
+  background-color: #b3c3c6;
+  margin: 0 auto;
+  width: 0.5vw;
+  height: 5vw;
+}
+
+.rover-camera:after {
+  position: absolute;
+  margin: -18% 0 0 calc(((100% / 3) / 2 * -1) + 0.5vw / 2);
+  background-image: url("assets/rover-camera.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+  width: calc(100% / 3);
+  height: 0;
+  padding-top: 18%;
+}
+
+.rover-antenna {
+  position: absolute;
+  margin: -4.5vw 0 0 9.8vw;
+  width: 3.5vw;
+  height: 3.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.rover-antenna > div.antenna-front {
+  position: absolute;
+  background-image: radial-gradient(
+    #b3c3c6 0%,
+    #ecf0f1 20%,
+    #b3c3c6 80%,
+    #b3c3c6 100%
+  );
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  animation: antenna-front 5s linear infinite;
+}
+
+.rover-antenna > div.antenna-dot {
+  position: absolute;
+  margin-left: 0;
+  background-color: #3a425a;
+  border-radius: 50%;
+  width: 20%;
+  height: 20%;
+  z-index: 4;
+  animation: antenna-dot 5s linear infinite;
+}
+
+.rover-antenna > div.antenna-back {
+  position: absolute;
+  visibility: visible;
+  background-color: #3a425a;
+  border-radius: 50%;
+  width: 0;
+  height: 100%;
+  animation: antenna-back 5s linear infinite;
+  z-index: 1;
+  animation-delay: 1.2s;
+}
+
+.rover-antenna > div.antenna-left {
+  visibility: hidden;
+  position: absolute;
+  background-image: linear-gradient(to right, #3a425a 50%, transparent 50%);
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  animation: antenna-right 5s linear infinite;
+}
+
+.rover-antenna > div.antenna-right {
+  visibility: visible;
+  background-image: linear-gradient(to right, transparent 50%, #3a425a 50%);
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  animation: antenna-left 5s linear infinite;
+}
+
+.rover-antenna > div.antenna-connector {
+  position: absolute;
+  margin-left: 0;
+  background-color: #b3c3c6;
+  width: 0%;
+  height: 10%;
+  z-index: 3;
+  animation: antenna-connector 5s linear infinite;
+}
+
+.rover-antenna-base {
+  position: absolute;
+  top: 0;
+  background-color: #b3c3c6;
+  margin: 4vw 0 0 11.2vw;
+  bottom: 0;
+  width: 0.5vw;
+  height: 1vw;
+}
+
+.rover-chassi {
+  position: relative;
+  width: 16vw;
+  height: 6vw;
+  clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+  background-image: linear-gradient(#ecf0f1 25%, #b3c3c6 25%);
+  z-index: 1;
+}
+
+.rover-squares {
+  position: absolute;
+  margin: calc(10% + 1px) 0 0 calc(100% / 3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% / 3);
+  height: 20%;
+}
+
+.rover-squares > div {
+  background-color: #d1d4d1;
+  width: 20%;
+}
+
+.rover-squares > div:after {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.rover-wheels {
+  position: relative;
+  margin: calc(30% / 2 * -1) auto 0 auto;
+  width: 85%;
+  z-index: 2;
+}
+
+.rover-wheels > div {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  background-image: url("assets/rover-wheel.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  transform-origin: 50% 50%;
+}
+
+.rover-wheels > div:first-child {
+  animation: wheels-left 5s linear infinite;
+}
+
+.rover-wheels > div:nth-child(2) {
+  left: calc(50% - 15%);
+  animation: wheels-center 5s linear infinite;
+}
+
+.rover-wheels > div:last-child {
+  right: 0;
+  animation: wheels-right 5s linear infinite;
+}
+
+.rover-wheels > div:after {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.rover-wheels > div > div {
+  border-radius: 50%;
+  width: 35%;
+  background-color: #b3c3c6;
+}
+
+.rover-wheels > div > div:after {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+@keyframes distantStars {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -10vw;
+  }
+}
+
+@keyframes smallPlanet {
+  0% {
+    right: 2vw;
+  }
+  100% {
+    right: 22vw;
+  }
+}
+
+@keyframes largePlanet {
+  0% {
+    left: -30vw;
+  }
+  100% {
+    left: -50vw;
+  }
+}
+
+@keyframes speed1x {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -20vw;
+  }
+}
+
+@keyframes backMountains {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -25vw;
+  }
+}
+
+@keyframes middleMountains {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -50vw;
+  }
+}
+
+@keyframes frontMountains {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -100vw;
+  }
+}
+
+@keyframes antenna-front {
+  0% {
+    width: 100%;
+  }
+  25% {
+    width: 0;
+  }
+  75% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes antenna-dot {
+  0% {
+    margin-left: 0;
+  }
+  15% {
+    margin-left: -30%;
+  }
+  85% {
+    margin-left: 30%;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+
+@keyframes antenna-back {
+  0% {
+    visibility: visible;
+    width: 0;
+  }
+  25% {
+    visibility: visible;
+    width: 100%;
+  }
+  60% {
+    visibility: hidden;
+    width: 0%;
+  }
+  100% {
+    visibility: hidden;
+    width: 0;
+  }
+}
+
+@keyframes antenna-right {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes antenna-left {
+  0% {
+    visibility: visible;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes antenna-connector {
+  0% {
+    margin-left: 0;
+    width: 0;
+  }
+  15% {
+    margin-left: calc(30% / 2 * -1);
+    width: 30%;
+  }
+  25% {
+    margin-left: 0;
+    width: 0;
+  }
+  75% {
+    margin-left: 0;
+    width: 0;
+  }
+  78% {
+    margin-left: calc(30% / 2);
+    width: 30%;
+  }
+  100% {
+    margin-left: 0;
+    width: 0;
+  }
+}
+
+@keyframes rover {
+  0% {
+    transform: rotate(0);
+  }
+  20% {
+    transform: rotate(0);
+  }
+  40% {
+    transform: rotate(-1.5deg);
+  }
+  60% {
+    transform: rotate(1.5deg);
+  }
+  80% {
+    transform: rotate(-1.5deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes claw {
+  0% {
+    transform: rotate(0);
+  }
+  20% {
+    transform: rotate(0);
+  }
+  40% {
+    transform: rotate(6deg);
+  }
+  60% {
+    transform: rotate(-10deg);
+  }
+  80% {
+    transform: rotate(6deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes wheels-left {
+  0% {
+    transform: rotate(0);
+    margin-top: 0;
+  }
+  20% {
+    transform: rotate(72deg);
+    margin-top: -3%;
+  }
+  40% {
+    transform: rotate(144deg);
+    margin-top: 0;
+  }
+  60% {
+    transform: rotate(216deg);
+    margin-top: -3%;
+  }
+  80% {
+    transform: rotate(288deg);
+    margin-top: 3%;
+  }
+  100% {
+    transform: rotate(360deg);
+    margin-top: 0;
+  }
+}
+
+@keyframes wheels-center {
+  0% {
+    transform: rotate(0deg);
+    margin-top: 0;
+  }
+  20% {
+    transform: rotate(72deg);
+    margin-top: 0;
+  }
+  40% {
+    transform: rotate(144deg);
+    margin-top: -3%;
+  }
+  60% {
+    transform: rotate(216deg);
+    margin-top: 0;
+  }
+  80% {
+    transform: rotate(288deg);
+    margin-top: -3%;
+  }
+  100% {
+    transform: rotate(360deg);
+    margin-top: 3%;
+  }
+}
+
+@keyframes wheels-right {
+  0% {
+    transform: rotate(0deg);
+    margin-top: 0;
+  }
+  20% {
+    transform: rotate(72deg);
+    margin-top: 0;
+  }
+  40% {
+    transform: rotate(144deg);
+    margin-top: -3%;
+  }
+  60% {
+    transform: rotate(216deg);
+    margin-top: 0;
+  }
+  80% {
+    transform: rotate(288deg);
+    margin-top: 3%;
+  }
+  100% {
+    transform: rotate(360deg);
+    margin-top: -3%;
+  }
+}

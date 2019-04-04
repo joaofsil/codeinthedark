@@ -1,0 +1,127 @@
+<!--background: #1E2229
+
+saturn: #BEA483
+saturn rings: #FFE3C0
+
+cassini head: #DCE1EB
+cassini body: #414952
+cassini pannels: #E9EDF5
+cassini antennas: #FFFFFF
+-->
+<html>
+<head>
+    <style>
+        .top {
+            display: block;
+            width: 800px;
+            height: 600px;
+            background-color: #1E2229;
+            position: relative;
+        }
+        
+        .saturn {
+            background-color: #BEA483;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 400px;
+            left: 100px;
+            border-radius: 50%;
+        }
+        
+        .ring {
+            
+        }
+        
+        .probe {
+            
+        }
+        
+        .head {
+            background-color:#DCE1EB;
+            
+        }
+        
+        .body {
+            backgroound-color: #414952;
+            width: 60px;
+            height: 30px;
+            position: absolute;
+            top: 100px;
+            left: 600px;
+        }
+        
+        @keyframes probe-anim {
+            0% {
+                transform: translateX(0px) translateY(0px) rotateZ(30deg);
+            }
+            100% {
+                transform: translateX(-100px) translateY(200px) rotateZ(60deg);
+            }
+        }
+        
+        .probe {
+            animation: probe-anim 5s infinite;
+            position: relative;
+        }
+        
+        .head {
+            background-color:#DCE1EB;
+            width: 20px;
+            height: 30px;
+            display: block;
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+            transform: translateX(100%);
+            position: absolute;
+            left: -30px;
+            top: 0;
+        }
+        
+        .arm {
+            display:block;
+            width: 15px;
+            height: 15px;
+            background-color: #E9EDF5;
+            position: absolute;
+            left: 20px;
+        }
+        
+        .arm-1 {
+            top: -20px;
+        }
+        
+        .arm-2 {
+            bottom: -20px;
+        }
+    </style>
+</head>    
+
+<body>
+    
+    <div class="top">
+        <div class="saturn">
+            <div class="planet">
+                
+            </div>
+            <div class="ring"></div>
+        </div>
+        <div class="probe">
+            <div class="head">
+                
+            </div>
+            <div class="body">
+                
+            </div>
+            <div class="arm arm-1"></div>
+            <div class="arm arm-2"></div>
+            
+            <div class="antena antena-1"></div>
+            
+            <div class="antena antena-2"></div>
+            
+            <div class="antena antena-3"></div>
+        </div>
+    </div>
+</body>
+</html>

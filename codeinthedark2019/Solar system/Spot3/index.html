@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <style>
+            
+/*orbit: #224D82
+
+earth: #01B2E9
+mars: #E45C50
+jupiter: #FBAE79
+saturn: #FEC76A
+uranus: #8FECE9
+neptune: #30C1EE
+pluto: #E0EBED*/
+body{
+    margin:0;
+    background: #0f1217 ;
+    position: relative;
+    width:11000px;
+    height:11000px;
+    animation: r 10s linear infinite;
+    transform-origin: center center;
+}
+@keyframes r {
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+*{
+    box-sizing:border-box;
+}
+.sun{
+    background:  #FFD300;
+    width: 100px;
+    height:100px;
+    border-radius:50%;
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.planet1 {
+    width: 15px;
+    height:15px;
+    border-radius: 50%;
+    position:absolute;
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #D49F76;
+}
+.planet2 {
+    width: 20px;
+    height:20px;
+    border-radius: 50%;
+    background: #E9BE94;
+    position:absolute;
+    left: 30%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.planet3 {
+    width: 25px;
+    height:25px;
+    border-radius: 50%;
+    background: #01B2E9;
+    position:absolute;
+    left: 20%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.orbit {
+    border: 1px solid #224D82;
+    position:absolute;
+    left: 30%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+.orbit.a{
+    width:200px;
+    height:200px;
+}
+.orbit.b{
+     width:300px;
+    height:300px;
+}
+.orbit.c{
+     width:400px;
+    height:400px;
+}
+.orbit.d{
+     width:500px;
+    height:500px;
+}
+.orbit.e{
+     width:600px;
+    height:600px;
+}
+.orbit.f{
+     width:700px;
+    height:700px;
+}
+.orbit.g{
+     width:800px;
+    height:800px;
+}
+.orbit.h{
+     width:900px;
+    height:900px;
+}
+.orbit.i{
+     width:1000px;
+    height:1000px;
+}
+        </style>
+    </head>
+    <body>
+        <div class="orbit a"></div>
+        <div class="orbit b"></div>
+        <div class="orbit c"></div>
+        <div class="orbit d"></div>
+        <div class="orbit e"></div>
+        <div class="orbit f"></div>
+        <div class="orbit g"></div>
+        <div class="orbit h"></div>
+        <div class="orbit i"></div>
+        <div class="sun"></div>
+        <div class="planet1"></div>
+        <div class="planet2"></div>
+        <div class="planet3"></div>
+        <div class="planet4"></div>
+        <div class="planet5"></div>
+        <div class="planet6"></div>
+    </body>
+</html>

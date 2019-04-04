@@ -1,0 +1,40 @@
+@keyframes anim-parallax {
+  from {
+    background-position-x: 0px;
+  }
+
+  to {
+    background-position-x: -600px ;
+  }
+}
+
+.distant-stars,
+.near-stars,
+.back-mountains,
+.clouds,
+.middle-mountains,
+.front-mountains {
+  animation: anim-parallax linear infinite;
+}
+
+.distant-stars {
+  animation-duration: 150s;
+}
+
+.near-stars {
+  animation-duration: 90s;
+}
+
+.back-mountains {
+  animation-duration: 80s;
+}
+
+.clouds {
+  animation-duration: 75s;
+}
+.middle-mountains{
+  animation-duration: 70s;
+}
+.front-mountains{
+  animation-duration: 60s;
+}

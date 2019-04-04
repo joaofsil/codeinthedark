@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <style>
+            body {
+                background-color: #0f1217;
+            }
+            .canvas {
+                position: relative;
+                width: 600px;
+                height: 600px;
+            }
+            @keyframes rotation {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+            .sun,
+            .ring {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+            }
+            .sun {
+                backgroung-color: #FFD300;
+                width: 80px;
+                height: 80px;
+            }
+            .planet {
+                top: 50%;
+                left: 0;
+                transform: translateX(-50%);
+                background-color: #D49F76;
+                width: 30px;
+                height: 30px;
+            }
+            .ring {
+                border: 2px solid #224D82;
+                animation: rotation infinite linear;
+            }
+            .ring-1 {
+                width: 150px;
+                animation-duration: 1s;
+            }
+            .ring-2 {
+                width: 220px;
+                animation-duration: 2s;
+            }
+            .ring-3 {
+                width: 280px;
+                animation-duration: 10s;
+            }
+            .ring-4 {
+                width: 340px;
+                animation-duration: 8s;
+            }
+            .ring-5 {
+                width: 400px;
+                animation-duration: 10s;
+            }
+            .ring-6 {
+                width: 450px;
+                animation-duration: 10s;
+            }
+            .ring-7 {
+                width: 500px;
+                animation-duration: 15s;
+            }
+        </style>
+    </head>
+    <body>
+        
+        
+        <div class="canvas">
+            <div class="sun"></div>
+            <div class="ring ring-1">
+                <div class="planet"></div>
+            </div>
+            <div class="ring ring-2">
+                <div class="planet"></div>
+            </div>
+            <div class="ring ring-3">
+                <div class="planet"></div>
+            </div>
+            <div class="ring ring-4">
+                <div class="planet"></div>
+            </div>
+            <div class="ring ring-5">
+                <div class="planet"></div>
+            </div>
+            <div class="ring ring-6">
+                <div class="planet"></div>
+            </div>
+            <div class="ring ring-7">
+                <div class="planet"></div>
+            </div>
+        </div>
+        
+    </body>
+</html>

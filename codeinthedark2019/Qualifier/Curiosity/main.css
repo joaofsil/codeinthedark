@@ -1,0 +1,425 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body > * {
+  position: absolute;
+  width: 200vw;
+  height: 100vh;
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  background-size: 100vw auto;
+}
+
+.space, .atmosphere {
+  background: linear-gradient(to bottom, #1A2A6C, #F84D00 60%, #FDBB2C);
+}
+
+.distant-stars,
+.close-stars {
+  background-position: left top;
+}
+
+.distant-stars {
+  background-image: url(images/distant-stars.svg);
+  animation: landscape 800s linear infinite both;
+}
+
+.close-stars {
+  background-image: url(images/close-stars.svg);
+  animation: landscape 300s linear infinite both;
+}
+
+.small-planet {
+  background-image: url(images/small-planet.svg);
+  animation: landscape 250s linear infinite both;
+}
+
+.large-planet {
+  background-image: url(images/large-planet.svg);
+  background-size: auto 100vh;
+  background-position-x: -20vw;
+  animation: landscape 200s linear infinite both;
+}
+
+.atmosphere {
+  opacity: .5;
+}
+
+.clouds {
+  background-image: url(images/clouds.svg);
+  animation: landscape 180s linear infinite both;
+}
+
+.back-mountains {
+  background-image: url(images/back-mountains.svg);
+  animation: landscape 140s linear infinite both;
+}
+
+.middle-mountains {
+  background-image: url(images/middle-mountains.svg);
+  animation: landscape 80s linear infinite both;
+}
+
+.front-mountains {
+  background-image: url(images/front-mountains.svg);
+  animation: landscape 50s linear infinite both;
+}
+
+.rover {
+  width: 190px;
+  height: 74px;
+  left: 50%;
+  bottom: 12.5%;
+  transform: translate3d(-50%, 0, 0);
+  animation: rover 3s linear infinite both;
+}
+
+.rover *,
+.rover *::before,
+.rover *::after {
+  position: absolute;
+  content: '';
+}
+
+.arm {
+  left: 0;
+  bottom: 100%;
+  width: 60px;
+  height: 92px;
+}
+
+.sections {
+  right: 0;
+  bottom: 0;
+  width: 8px;
+  height: 30px;
+  background: #b3c3c6;
+}
+
+.sections::before {
+  bottom: 100%;
+  right: 100%;
+  width: 70px;
+  height: 7px;
+  background: #b3c3c6;
+  transform: rotate(35deg);
+  transform-origin: right bottom;
+}
+
+.sections::after {
+  top: -10px;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #3A425A;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.claw {
+  left: -13px;
+  top: 15px;
+  width: 27px;
+  height: 62px;
+  background: url(images/rover-claw.svg) no-repeat center bottom;
+  transform-origin: center 8px;
+  animation: arm 3s linear infinite both;
+}
+
+.claw::before {
+  top: 0;
+  left: 50%;
+  width: 6px;
+  height: 46px;
+  background: #b3c3c6;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.claw::after {
+  top: -1px;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #3A425A;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.camera {
+  left: 50%;
+  bottom: 100%;
+  width: 8px;
+  height: 62px;
+  background: #b3c3c6;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.camera::before {
+  width: 62px;
+  height: 34px;
+  bottom: 100%;
+  left: 50%;
+  background: url(images/rover-camera.svg) no-repeat center;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.radar {
+  right: 12px;
+  top: -64px;
+  width: 56px;
+  height: 56px;
+  animation: radar 3s step-end infinite alternate both;
+}
+
+.radar::before {
+  width: 6px;
+  height: 8px;
+  top: 100%;
+  left: 50%;
+  background: #b3c3c6;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.reflector {
+  position: relative;
+}
+
+.reflector::before {
+  width: 28px;
+  height: 56px;
+  border-bottom-left-radius: 56px;
+  border-top-left-radius: 56px;
+  background: #3A425A
+}
+
+.reflector::after {
+  width: 0px;
+  left: 50%;
+  height: 56px;
+  border-radius: 50%;
+  background: radial-gradient(#888, #eee 20%, #eee 35%, #777);
+  transform: translate3d(-50%, 0, 0);
+  animation: reflector 6s linear infinite both;
+}
+
+.antenna {
+  top: 50%;
+  left: 50%;
+  width: 25px;
+  height: 6px;
+  border-radius: 5px;
+  transform: translate3d(0, -50%, 0);
+  background: #b3c3c6;
+  animation: antenna 6s linear infinite both;
+}
+
+.antenna::before {
+  right: -1px;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #3A425A;
+  transform: translate3d(0, -50%, 0);
+}
+
+.body {
+  left: 50%;
+  top: 0;
+  width: 210px;
+  height: 0;
+  border-bottom: 39px solid #b3c3c6;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.body::before {
+  top: 0;
+  left: 50%;
+  width: 160px;
+  height: 0;
+  border-bottom: 20px solid #ecf0f1;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.body::after {
+  top: 38px;
+  left: 50%;
+  width: 190px;
+  height: 0;
+  border-bottom: 40px solid #b3c3c6;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  transform: translate3d(-50%, 0, 0)  scaleY(-1);
+}
+
+.windows,
+.windows::before,
+.windows::after {
+  width: 13px;
+  height: 13px;
+  background: #D1D4D1
+}
+
+.windows {
+  left: 50%;
+  bottom: 40px;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.windows::before {
+  right: 200%;
+}
+
+.windows::after {
+  left: 200%;
+}
+
+.wheel {
+  width: 60px;
+  height: 60px;
+  bottom: -30px;
+  animation: suspension 3s linear infinite both;
+}
+
+.wheel::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(images/rover-wheel.svg) no-repeat center;
+  animation: wheel 6s linear infinite both;
+}
+
+.wheel::after {
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background: #BDC3C7;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.wheel:nth-child(6) {
+  right: -5px;
+  animation-delay: -600ms;
+}
+
+.wheel:nth-child(7) {
+  left: 50%;
+  margin-left: -30px;
+  animation-delay: -300ms;
+}
+
+.wheel:nth-child(8) {
+  left: -5px;
+  animation-delay: 0ms;
+}
+
+@keyframes landscape {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100vw, 0, 0);
+  }
+}
+
+@keyframes rover {
+  0%, 80% {
+    transform: rotate(0deg) translate3d(-50%, 0, 0);
+  }
+  20%, 60% {
+    transform: rotate(-2deg) translate3d(-50%, -3%, 0);
+  }
+  40% {
+    transform: rotate(2deg) translate3d(-50%, 3%, 0);
+  }
+}
+
+@keyframes arm {
+  0%, 80% {
+    transform: rotate(0deg);
+  }
+  20%, 60% {
+    transform: rotate(8deg);
+  }
+  40% {
+    transform: rotate(-8deg);
+  }
+}
+
+@keyframes suspension {
+  0%, 20%, 60%, 90% {
+    transform: translate3d(0, 0, 0);
+  }
+  10% {
+    transform: translate3d(0, -5px, 0);
+  }
+  75% {
+    transform: translate3d(0, -6px, 0);
+  }
+  80% {
+    transform: translate3d(0, 2px, 0);
+  }
+  85% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+@keyframes wheel {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes radar {
+  0%, 100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(-1);
+  }
+}
+
+@keyframes reflector {
+  0%, 50%, 100% {
+    width: 0%;
+    background: radial-gradient(#888, #eee 20%, #eee 35%, #777);
+  }
+  25%, 75% {
+    width: 100%;
+  }
+  50.01%, 100% {
+    background: #3A425A;
+  }
+}
+
+@keyframes antenna {
+  0%, 50%, 100% {
+    width: 25px;
+  }
+  25%, 75% {
+    width: 6px;
+  }
+  0% {
+    z-index: 2;
+  }
+  100% {
+    z-index: -1;
+  }
+}

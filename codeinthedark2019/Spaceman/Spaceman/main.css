@@ -1,0 +1,364 @@
+:root {
+  --white: #F5F5F4;
+  --gray: #A1AEB8;
+  --grayDark: #BDC6CC;
+  --grayDarker: #C7CCCE;
+  --grayLight: #D4D7D7;
+  --blue: #4C9BC9;
+  --grayLight2: #DCE1E1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #1D2129;
+  width: 100%;
+
+}
+
+/*--SPACEMAN--*/
+.spaceman {
+  width: 500px;
+  margin: 50px auto;
+}
+
+/*--SPACEMAN-HEAD--*/
+.spaceman-head {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -10px;
+  width: 200px;
+  height: 200px;
+  background-color: var(--white);
+  border-radius: 100%;
+}
+.spaceman-head:before {
+  content: '';
+  display: block;
+  width: 150px;
+  height: 25px;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  background-color: var(--grayLight);
+  border-radius: 15px;
+}
+.spaceman-head--ear {
+  width: 14px;
+  height: 72px;
+  display: block;
+  background-color: var(--gray);
+  border-radius: 8px;
+  transform: translate(-14px, 0);
+}
+.spaceman-head--ear:before {
+  content: '';
+  width: 6px;
+  height: 42px;
+  display: block;
+  background-color: var(--grayLight2);
+  transform: translate(-6px, 15px);
+  border-radius: 8px 0 0 8px;
+}
+.spaceman-head--ear_rotate {
+  transform: translate(10px, 0) rotate(180deg);
+}
+.spaceman-head--glass {
+  width: 167px;
+  height: 167px;
+  background-color: #909DA6;
+  border-radius: 100%;
+  border: 13px solid var(--grayLight2); 
+  margin-top: 8px;
+  overflow: hidden;
+}
+.spaceman-head--glass:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background-color: var(--gray);
+  transform: translate(-13px, 5px);
+}
+.spaceman-head--glass_bubble {
+  width: 26px;
+  height: 26px;
+  background-color: var(--grayDark);
+  border-radius: 100%;
+  transform: translate(25px, -110px);
+}
+.spaceman-head--glass_bubble:before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: var(--grayDark);
+  transform: translate(15px, 30px);
+}
+
+/*--SPACEMAN-BODY--*/
+.spaceman-full-body {
+  position: relative;
+  width: 200px;
+  height: 230px;
+}
+
+/*--SPACEMAN-BODY---BODY--*/
+.spaceman-full-body--body {
+  background-color: var(--white);
+  width: 100%;
+  height: 100%;
+  border-radius: 28px 28px 0 0;
+  z-index: 9;
+  position: relative;
+}
+.spaceman-full-body--body:before,
+.spaceman-full-body--body:after {
+  content: '';
+  background-color: var(--gray);
+  width: 22px;
+  height: 105px;
+  border-radius: 15px;
+  z-index: 9;
+  position: absolute;
+  top: 0;
+}
+.spaceman-full-body--body:before {
+  left: -11px;
+}
+.spaceman-full-body--body:after {
+  right: -11px;
+}
+.spaceman-full-body--body--interface {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  height: 70px;
+  padding: 10px;
+  background-color: var(--grayLight2);
+  transform: translateY(70%);
+  margin: 0 auto;
+  border-radius: 8px;
+}
+.spaceman-full-body--body--interface__buttons {
+  flex: 12px 0 0;
+  height: 12px;
+  border-radius: 100%;
+  background-color: #D97669;
+  position: relative;
+}
+.spaceman-full-body--body--interface__buttons:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background-color: #96C780;
+  transform: translateY(17px);
+}
+.spaceman-full-body--body--interface__buttons:after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 16px;
+  border-radius: 4px;
+  background-color: var(--grayDarker);
+  transform: translate(2px, 22px);
+}
+.spaceman-full-body--body--interface__screens {
+  width: 100%;
+  height: 30px;
+  margin-left: 10px;
+  background-color: var(--grayDarker);
+  border-radius: 4px;
+}
+.spaceman-full-body--body--interface__screens:before,
+.spaceman-full-body--body--interface__screens:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 6px;
+  border-radius: 4px;
+  background-color: var(--grayDarker);
+  transform: translateY(34px);
+}
+.spaceman-full-body--body--interface__screens:after {
+  transform: translateY(37px);
+}
+.spaceman-full-body--body--belt {
+  display: block;
+  width: calc(100% + 10px);
+  height: 25px;
+  position: absolute;
+  left: -5px;
+  bottom: 0;
+  background-color: var(--grayLight);
+  border-radius: 5px;
+}
+.spaceman-full-body--body--belt:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 100%;
+  background-color: var(--grayDarker);
+  position: absolute;
+  top: -8px;
+  left: calc(50% - 30px);
+  border-radius: 15px;
+}
+
+/*--SPACEMAN-MEMBER--*/
+.spaceman-member {
+  display: flex;
+  height: 60px;
+  transform-origin: left center;
+  transform: translate(27px, -10px) rotate(112deg);
+  position: absolute;
+}
+.spaceman-member--flag {
+  width: 485px;
+  height: 15px;
+  background-color: var(--grayDarker);
+  transform: translate(10px,85px) rotate(75deg);
+  position: absolute;
+  border-radius: 0 8px 8px 0;
+  z-index: 9;
+}
+.spaceman-member--flag:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: -70px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent var(--blue) var(--blue) var(--blue);
+  border-width: 60px 50px 130px;
+}
+.spaceman-member__right {
+  transform: rotate(30deg);
+  right: -160px;
+  top: 0;
+}
+.spaceman-member--piece {
+  position: relative;
+  z-index: 2;
+  width: 125px;
+  height: 100%;
+  background-color: var(--white);
+}
+.spaceman-member--piece:after {
+  content: '';
+  display: block;
+  width: 15px;
+  height: calc(100% + 10px);
+  right: -15px;
+  top: -5px;
+  position: absolute;
+  background-color: var(--grayLight);
+  border-radius: 8px;
+}
+.spaceman-member--piece:nth-child(2) {
+  width: 75px;
+  z-index: 1;
+}
+.spaceman-member--piece:nth-child(2):before {
+  --size: 60px;
+
+  content: '';
+  display: block;
+  background-color: var(--white);
+  position: absolute;
+  right: -57px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 100%;
+}
+
+/*--SPACEMAN-FOOTER--*/
+.spaceman-footer {
+  position: relative;
+}
+.spaceman-member-leg {
+  display: flex;
+  height: 75px;
+  transform-origin: 75px 0px;
+  transform: translate(10px,75px) rotate(90deg);
+  position: absolute;
+}
+.spaceman-member-leg__right {
+  transform: translate(40px,75px) rotate(90deg) scaleY(-1);
+}
+.spaceman-member-leg--piece {
+  position: relative;
+  z-index: 2;
+  width: 110px;
+  height: 100%;
+  background-color: var(--white);
+}
+.spaceman-member-leg--piece:after {
+  content: '';
+  display: block;
+  width: 21px;
+  height: calc(100% + 10px);
+  right: -15px;
+  top: -5px;
+  position: absolute;
+  background-color: var(--grayDarker);
+  border-radius: 8px;
+}
+.spaceman-member-leg--piece:nth-child(2) {
+  width: 95px;
+  z-index: 1;
+}
+.spaceman-member-leg--piece:nth-child(2):after {
+  display: none;
+}
+.spaceman-member-leg--foot {
+  width: 45px;
+  height: 100px;
+  background-color: var(--grayDarker);
+  border-bottom-left-radius: calc(100px*2);
+  border-top-left-radius: calc(100px*2);
+  transform: translate(-45px);
+  z-index: 9;
+}
+.spaceman-member-leg--foot:after {
+  content: '';
+  display: block;
+  height: calc(100% + 8px);
+  width: 8px;
+  background-color: var(--grayLight);
+  margin-left: 45px;
+  margin-top: -4px;
+  border-radius: 3px;
+}
+.spaceman-member-leg--foot__bubble {
+  width: 15px;
+  height: 15px;
+  border-radius: 100px;
+  background-color: #E0E2E2;
+  position: absolute;
+  transform: translate(15px, 70px);
+}
+.spaceman-member-leg--foot__bubble:after {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 100px;
+  background-color: #E0E2E2;
+  position: absolute;
+  transform: translate(15px, -3px);
+}

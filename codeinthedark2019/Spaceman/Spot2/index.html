@@ -1,0 +1,161 @@
+<html>
+    <head>
+        <style>
+            .body{
+                margin:0;
+                position: relative;
+                background: #1D2129;
+            }
+            *{
+                box-sizing:border-box;
+            }
+            .as{
+                position:absolute;
+                left: 50px;
+                top: 150px;
+            }
+            .chest {
+                width:50px;
+                height: 100px;
+                background: #F5F5F4;
+                border-radius: 10px;
+                position: relative;
+            }
+            .leftarm {
+                height:100px;
+                width: 20px;
+                background: #F5F5F4;
+                position: absolute;
+                left:-20px;
+                top: 0;
+                transform: rotate(10deg);
+                transform-origin: right top;
+            }
+            .rightarm {
+                height:100px;
+                width: 20px;
+                background: #F5F5F4;
+                position: absolute;
+                left:120px;
+                top: 0;
+                transform: rotate(-30deg);
+                transform-origin: left top;
+            }
+            .helmet {
+                background: #F5F5F4;
+                width: 100px;
+                height: 100px;
+                border-radius: 100px;
+                position: absolute;
+                left: 50%;
+                top: -100px;
+                transform: translate(-50%, 0);
+            }
+            .visor{
+                background: #A1AEB8;
+                border: 5px solid #DCE1E1;
+                width: 75px;
+                height: 75px;
+                border-radius: 75px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .leftleg {
+                height:100px;
+                width: 20px;
+                background: #F5F5F4;
+                position: absolute;
+                left:0px;
+                top: 100px;
+            }
+            .leftleg:after {
+                content: "";
+                width: 30px;
+                height:15px;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                position: absolute;
+                bottom: 0;
+                left: -10px;
+                background: #C7CCCE;
+            }
+            .rightleg {
+                height:100px;
+                width: 20px;
+                background: #F5F5F4;
+                position: absolute;
+                right:0px;
+                top: 100px;
+            }
+            .rightleg:after {
+                content: "";
+                width: 30px;
+                height:15px;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                position: absolute;
+                bottom: 0;
+                left: 0px;
+                background: #C7CCCE;
+            }
+            .flag{
+                position: absolute;
+                transform: rotate(20deg);
+                transform-origin: left bottom;
+                bottom: -100px;
+                right: -20px;
+            }
+            .pole {
+                background: #C7CCCE;
+                width: 5px;
+                height: 200px;
+                border-radius: 5px;
+                position: absolute;
+            }
+            .cena {
+                background: #4C9BC9;
+                width: 75px;
+                height: 40px;
+                position: absolute;
+            }
+            .cena:after {
+                content: "";
+                width: 0;
+                height: 0;
+                border-top: 20px solid #4C9BC9;
+                border-left: 20px solid transparent;
+                position: absolute;
+                border-right: 20px solid transparent;
+                left: 65px;
+            }
+            .cena:before {
+                content: "";
+                width: 0;
+                height: 0;
+                border-bottom: 20px solid #4C9BC9;
+                border-left: 20px solid transparent;
+                position: absolute;
+                border-right: 20px solid transparent;
+                left: 65px;
+                bottom: 0px;
+        </style>
+    
+    </head>
+    <body>
+        <div class="as">
+            <div class="helmet">
+                <div class="visor"></div>
+            </div>
+            <div class="chest"></div>
+            <div class="leftarm"></div>
+            <div class="rightarm"></div>
+            <div class="leftleg"></div>
+            <div class="rightleg"></div>
+            <div class="flag">
+                <div class="pole"></div>
+                <div class="cena"></div>
+            </div>
+        </div>
+    </body>
+</html>
